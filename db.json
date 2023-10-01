@@ -31,7 +31,7 @@
     },
     {
       "name": "Macbook",
-      "price": "100.000",
+      "price": "500.000",
       "color": "White",
       "category": "Labtop",
       "description": "Macbook Vip pro",
@@ -67,12 +67,57 @@
     },
     {
       "name": "Apple Watch",
-      "price": "320.00",
+      "price": "50.00",
       "color": "Dark",
       "category": "Apple Watch",
       "description": "Apple Watch",
       "image": "https://t3.ftcdn.net/jpg/02/95/76/42/360_F_295764233_fuwRvw5QfssDCCQICNkWhYBwAK2QYs04.jpg",
       "id": 12
+    },
+    {
+      "name": "Apple Watch A15",
+      "price": "1.000.000",
+      "color": "Dark",
+      "category": "Apple Watch",
+      "description": "Apple Watch A15",
+      "image": "https://dienthoaigiakho.vn/_next/image?url=https%3A%2F%2Fcdn.dienthoaigiakho.vn%2Fphotos%2F1662974406323-awse2-bm.jpg&w=1920&q=75",
+      "id": 13
+    },
+    {
+      "name": "Tablet Vip Pro A300",
+      "price": "320.00",
+      "color": "Dark",
+      "category": "Tablet",
+      "description": "Tablet Vip Pro A300",
+      "image": "https://p2-ofp.static.pub/fes/cms/2021/10/28/juqs65pgl1gh3dysi7yv1tnvtsiqva364946.png",
+      "id": 14
+    },
+    {
+      "name": "Tablet Vip Pro A500",
+      "price": "400.00",
+      "color": "Black",
+      "category": "Tablet",
+      "description": "Tablet Vip Pro A500",
+      "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/tablets-20230518/matepad-se-series/matepad-se-series-card-1.jpg",
+      "id": 15
+    },
+    {
+      "name": "Đồng Hồ Cơ Nam",
+      "price": "699.000",
+      "color": "Black",
+      "category": "Watch",
+      "description": "Đồng hồ cơ đẹp ",
+      "image": "https://cello.vn/image/cache/catalog/Cello/SanPham/Dong%20Ho%20Thong%20Minh/Garmin/2023/vivomove-trend/garmin-vivomove-trend-blk-01-500x500.jpg",
+      "id": 16
+    },
+    {
+      "name": "Đồng Hồ Cơ Nam",
+      "price": "2.009.000",
+      "color": "Black",
+      "category": "Watch",
+      "description": "Đồng hồ cơ đẹp Mặt Xanh đính kim cương ",
+      "image": "https://img.ws.mms.shopee.vn/641181f347f237107a40bf5c0e38c931",
+      "id": 17
     }
   ]
 }

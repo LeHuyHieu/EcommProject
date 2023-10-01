@@ -24,7 +24,10 @@
                     <td class="text-center"> {{item.color}} </td>
                     <td class="text-center"> <img src="{{item.image}}" width="60px" alt=""> </td>
                     <td class="text-center"> {{item.description}} </td>
-                    <td class="text-center"> <button class="btn btn-danger" (click)="deleteProduct(item.id)">Delete</button> </td>
+                    <td class="text-center"> 
+                        <fa-icon [icon]="iconDelete" class="btn btn-danger me-1" (click)="deleteProduct(item.id)"></fa-icon> 
+                        <a routerLink="/seller-update-product/{{item.id}}" class="btn btn-primary ms-1"><fa-icon [icon]="iconPen"></fa-icon></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
