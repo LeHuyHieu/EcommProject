@@ -1,0 +1,78 @@
+{
+  "seller": [
+    {
+      "name": "lehuyhieu",
+      "password": "123123",
+      "email": "lehuyhieu@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "hoang",
+      "password": "123123",
+      "email": "hoang@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Hieu Le",
+      "password": "123123",
+      "email": "user@gmail.com",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone 15pro max",
+      "price": "320.00",
+      "color": "Titan",
+      "category": "Mobile",
+      "description": "Iphone Pro Max",
+      "image": "https://trangthienlong.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-mau-vang-titanium-256gb-512gb-1tb-trang-thien-long-mobile-768x768.jpg",
+      "id": 1
+    },
+    {
+      "name": "Macbook",
+      "price": "100.000",
+      "color": "White",
+      "category": "Labtop",
+      "description": "Macbook Vip pro",
+      "image": "https://khomacbook.com/wp-content/uploads/2023/04/macbook-air-2019-768x538.jpg",
+      "id": 2
+    },
+    {
+      "name": "Samsung mp4",
+      "price": "320.00",
+      "color": "Blue",
+      "category": "Mobile",
+      "description": "Samsung Mp4 ",
+      "image": "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/10/20/image-removebg-preview-27.png",
+      "id": 3
+    },
+    {
+      "name": "Apple Watch",
+      "price": "320.00",
+      "color": "Pink",
+      "category": "Apple Watch",
+      "description": "Apple Watch",
+      "image": "https://dienthoaigiakho.vn/_next/image?url=https%3A%2F%2Fcdn.dienthoaigiakho.vn%2Fphotos%2F1634119315265-aw7-alu-lte-re-min.jpg&w=1920&q=75",
+      "id": 7
+    },
+    {
+      "name": "Apple Watch",
+      "price": "320.00",
+      "color": "Light",
+      "category": "Apple Watch",
+      "description": "Apple Watch",
+      "image": "https://media.istockphoto.com/id/486058484/photo/apple-watch.jpg?s=612x612&w=0&k=20&c=0foXF_J3ENYQ6ZcuP5YI9hsK5z2SNQ47J3suKYz9ook=",
+      "id": 8
+    },
+    {
+      "name": "Apple Watch",
+      "price": "320.00",
+      "color": "Dark",
+      "category": "Apple Watch",
+      "description": "Apple Watch",
+      "image": "https://t3.ftcdn.net/jpg/02/95/76/42/360_F_295764233_fuwRvw5QfssDCCQICNkWhYBwAK2QYs04.jpg",
+      "id": 12
+    }
+  ]
+}

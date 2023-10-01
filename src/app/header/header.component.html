@@ -1,0 +1,21 @@
+<nav class="nav">
+    <h1><a href="/">E-Comm</a></h1>
+    <div class="form-group" *ngIf="menuType === 'default'">
+        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
+        <button class="btn btn-active" type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <div [ngSwitch]="menuType">
+        <ul *ngSwitchCase="'default'">
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/seller-auth">Seller</a></li>
+            <li><a routerLink="/cart">Cart(0)</a></li>
+            <li><a routerLink="/login">Login</a></li>
+        </ul>
+        <ul *ngSwitchCase="'seller'">
+            <li><a routerLink="/seller-home">List</a></li>
+            <li><a routerLink="/seller-add-product">Add Product</a></li>
+            <li><a href="javascript:void(0);">{{ sellerName | titlecase }}</a></li>
+            <li><a href="javascript:void(0);" (click)="logout()">Logout</a></li>
+        </ul>
+    </div>
+</nav>

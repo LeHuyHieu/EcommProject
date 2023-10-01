@@ -1,0 +1,43 @@
+{
+  "seller": [
+    {
+      "name": "lehuyhieu",
+      "password": "123123",
+      "email": "lehuyhieu@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "hoang",
+      "password": "123123",
+      "email": "hoang@gmail.com",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "iphone 15pro max",
+      "price": "320.00",
+      "color": "Titan",
+      "category": "Mobile",
+      "description": "Iphone Vip",
+      "image": "C:\\fakepath\\iphone-15-pro-max.jpg",
+      "id": 1
+    },
+    {
+      "name": "Samsung mp4",
+      "price": "320.00",
+      "color": "Titan",
+      "category": "Mobile",
+      "description": "123",
+      "image": "C:\\fakepath\\iphone-15-pro-max.jpg"
+    },
+    {
+      "name": "Oppo A15",
+      "price": "320.00",
+      "color": "Titan",
+      "category": "Labtop",
+      "description": "123",
+      "image": "C:\\fakepath\\iphone-15-pro-max.jpg"
+    }
+  ]
+}

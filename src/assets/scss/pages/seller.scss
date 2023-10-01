@@ -1,0 +1,14 @@
+.signup,
+.login,
+.add-product-content {
+  @include flex-center(column);
+
+  .common-form {
+    width: 500px;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+  }
+}
+.add-product-content > .common-form {
+  width: 700px;
+}
