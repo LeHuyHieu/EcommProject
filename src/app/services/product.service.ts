@@ -1,12 +1,18 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { product } from '../data-type';
+import { BehaviorSubject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  constructor(private http: HttpClient) {}
+  product: any;
+  searchResults: any;
+  querySearch: string | undefined;
+
+  constructor(private http: HttpClient, private activeRoute: ActivatedRoute,) {}
 
   addProduct(data: product) {
     const httpOptions = {
@@ -46,5 +52,9 @@ export class ProductService {
 
   trendyProducts() {
     return this.http.get<product[]>('http://localhost:3000/products?_limit=8')
+  }
+
+  searchProducts(query: string) {
+    return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`);
   }
 }

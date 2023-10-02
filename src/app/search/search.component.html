@@ -1,0 +1,29 @@
+<div class="product__list__wrapper mt-5">
+    <h2 class="fw-normal fs-3 mb-4">{{querySearch | titlecase}}</h2>
+    <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of searchResults">
+            <div class="product-content mb-4">
+                <div class="product__item">
+                    <div class="product__image">
+                        <a routerLink="/details/{{item.id}}">
+                            <img class="w-100" src="{{item.image}}" alt="Product">
+                        </a>
+                    </div>
+                    <div class="product__details">
+                        <h3 class="product__head text-start"><a routerLink="/details/{{item.id}}">{{item.name | titlecase}}</a></h3>
+                        <div class="product__price flex-column text-start">
+                            <p class="price w-100 mb-0"><strong>Price :</strong> ${{item.price}}</p>
+                            <p class="color w-100 mb-0"><strong>Color :</strong> {{item.color}}</p>
+                            <p class="w-100 mb-0"><strong>Category :</strong> {{item.category}}</p>
+                            <p class="w-100 mb-0"><strong>Description :</strong> {{item.description}}</p>
+                        </div>
+                    </div>
+                    <div class="product__link">
+                        <a href="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon>View Detail</a>
+                        <a href=""><fa-icon [icon]="iconCart"></fa-icon>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

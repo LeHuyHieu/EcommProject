@@ -1,8 +1,14 @@
 <nav class="nav">
     <h1><a href="/">E-Comm</a></h1>
-    <div class="form-group" *ngIf="menuType === 'default'">
-        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
-        <button class="btn btn-active" type="submit"><i class="fas fa-search"></i></button>
+    <div class="form-group position-relative" *ngIf="menuType === 'default'">
+        <input type="text" #searchInput (keyup)="searchProduct($event);" class="form-control" placeholder="Tìm kiếm sản phẩm">
+        <button class="btn btn-active" type="submit" (click)="submitSearch(searchInput.value);"><i class="fas fa-search"></i></button>
+        <ul class="list__search__products" *ngIf="searchResult">
+            <span class="close" (click)="hideSearch();"><fa-icon [icon]="iconClose"></fa-icon></span>
+            <li *ngFor="let item of searchResult">
+                <a routerLink="/details/{{item.id}}">{{item.name}}</a>
+            </li>
+        </ul>
     </div>
     <div [ngSwitch]="menuType">
         <ul *ngSwitchCase="'default'">

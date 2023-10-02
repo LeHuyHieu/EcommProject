@@ -12,3 +12,14 @@
 .add-product-content > .common-form {
   width: 700px;
 }
+.add-product-content {
+  .flex__center {
+    @include flex-sp(row);
+    .form-group.w-3{
+      width: calc((100% / 3) - 1rem);
+      & input#price-product,input#color-product, select#category-product {
+        height: 40px;
+      }
+    }
+  }
+}

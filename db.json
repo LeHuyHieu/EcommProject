@@ -23,7 +23,7 @@
     {
       "name": "iphone 15pro max",
       "price": "320.00",
-      "color": "Titan",
+      "color": "#828282",
       "category": "Mobile",
       "description": "Iphone Pro Max",
       "image": "https://trangthienlong.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-mau-vang-titanium-256gb-512gb-1tb-trang-thien-long-mobile-768x768.jpg",
@@ -32,7 +32,7 @@
     {
       "name": "Macbook",
       "price": "500.000",
-      "color": "White",
+      "color": "#ffffff",
       "category": "Labtop",
       "description": "Macbook Vip pro",
       "image": "https://khomacbook.com/wp-content/uploads/2023/04/macbook-air-2019-768x538.jpg",
@@ -41,7 +41,7 @@
     {
       "name": "Samsung mp4",
       "price": "320.00",
-      "color": "Blue",
+      "color": "#000000",
       "category": "Mobile",
       "description": "Samsung Mp4 ",
       "image": "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/10/20/image-removebg-preview-27.png",
@@ -50,7 +50,7 @@
     {
       "name": "Apple Watch",
       "price": "320.00",
-      "color": "Pink",
+      "color": "#d60000",
       "category": "Apple Watch",
       "description": "Apple Watch",
       "image": "https://dienthoaigiakho.vn/_next/image?url=https%3A%2F%2Fcdn.dienthoaigiakho.vn%2Fphotos%2F1634119315265-aw7-alu-lte-re-min.jpg&w=1920&q=75",
@@ -59,7 +59,7 @@
     {
       "name": "Apple Watch",
       "price": "320.00",
-      "color": "Light",
+      "color": "#dbdbdb",
       "category": "Apple Watch",
       "description": "Apple Watch",
       "image": "https://media.istockphoto.com/id/486058484/photo/apple-watch.jpg?s=612x612&w=0&k=20&c=0foXF_J3ENYQ6ZcuP5YI9hsK5z2SNQ47J3suKYz9ook=",
@@ -68,7 +68,7 @@
     {
       "name": "Apple Watch",
       "price": "50.00",
-      "color": "Dark",
+      "color": "#000000",
       "category": "Apple Watch",
       "description": "Apple Watch",
       "image": "https://t3.ftcdn.net/jpg/02/95/76/42/360_F_295764233_fuwRvw5QfssDCCQICNkWhYBwAK2QYs04.jpg",
@@ -77,7 +77,7 @@
     {
       "name": "Apple Watch A15",
       "price": "1.000.000",
-      "color": "Dark",
+      "color": "#050505",
       "category": "Apple Watch",
       "description": "Apple Watch A15",
       "image": "https://dienthoaigiakho.vn/_next/image?url=https%3A%2F%2Fcdn.dienthoaigiakho.vn%2Fphotos%2F1662974406323-awse2-bm.jpg&w=1920&q=75",
@@ -86,7 +86,7 @@
     {
       "name": "Tablet Vip Pro A300",
       "price": "320.00",
-      "color": "Dark",
+      "color": "#000000",
       "category": "Tablet",
       "description": "Tablet Vip Pro A300",
       "image": "https://p2-ofp.static.pub/fes/cms/2021/10/28/juqs65pgl1gh3dysi7yv1tnvtsiqva364946.png",
@@ -95,7 +95,7 @@
     {
       "name": "Tablet Vip Pro A500",
       "price": "400.00",
-      "color": "Black",
+      "color": "#000000",
       "category": "Tablet",
       "description": "Tablet Vip Pro A500",
       "image": "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/tablets-20230518/matepad-se-series/matepad-se-series-card-1.jpg",
@@ -104,7 +104,7 @@
     {
       "name": "Đồng Hồ Cơ Nam",
       "price": "699.000",
-      "color": "Black",
+      "color": "#000000",
       "category": "Watch",
       "description": "Đồng hồ cơ đẹp ",
       "image": "https://cello.vn/image/cache/catalog/Cello/SanPham/Dong%20Ho%20Thong%20Minh/Garmin/2023/vivomove-trend/garmin-vivomove-trend-blk-01-500x500.jpg",
@@ -113,11 +113,20 @@
     {
       "name": "Đồng Hồ Cơ Nam",
       "price": "2.009.000",
-      "color": "Black",
+      "color": "#005fa8",
       "category": "Watch",
       "description": "Đồng hồ cơ đẹp Mặt Xanh đính kim cương ",
       "image": "https://img.ws.mms.shopee.vn/641181f347f237107a40bf5c0e38c931",
       "id": 17
+    },
+    {
+      "name": "Laptop A5 Pro",
+      "price": "500.990",
+      "color": "#ff0000",
+      "category": "Labtop",
+      "description": "Laptop A5 Pro",
+      "image": "https://khomacbook.com/wp-content/uploads/2023/04/macbook-air-2019-768x538.jpg",
+      "id": 18
     }
   ]
 }

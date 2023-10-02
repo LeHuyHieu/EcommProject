@@ -10,3 +10,15 @@
         color: $--violet;
     }
 }
+.button__product {
+    background-color: transparent;
+    border: 1px solid $--black;
+    padding: .5rem;
+    border-radius: .25rem;
+    text-align: center;
+}
+.button__product.buy {
+    background-color: $--danger;
+    color: $--white;
+    border: 1px solid $--danger;
+}

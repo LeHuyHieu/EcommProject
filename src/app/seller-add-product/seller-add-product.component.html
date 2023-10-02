@@ -7,20 +7,22 @@
                 <label for="name-product">Name Product</label>
                 <input type="text" name="name" ngModel class="form-control" placeholder="Enter product name" id="name-product">
             </div>
-            <div class="form-group mb-3">
-                <label for="price-product">Price Product</label>
-                <input type="text" name="price" ngModel class="form-control" placeholder="Enter product price" id="price-product">
-            </div>
-            <div class="form-group mb-3">
-                <label for="color-product">Color Product</label>
-                <input type="text" name="color" ngModel class="form-control" placeholder="Enter product color" id="color-product">
-            </div>
-            <div class="form-group mb-3">
-                <label for="category-product">Category Product</label>
-                <select name="category" id="category-product" ngModel class="form-select">
-                    <option value="">Select Category</option>
-                    <option value="{{category}}" *ngFor="let category of categorysProduct">{{category}}</option>
-                </select>
+            <div class="flex__center mb-3">
+                <div class="form-group w-3">
+                    <label for="price-product">Price Product</label>
+                    <input type="text" name="price" ngModel class="form-control" placeholder="Enter product price" id="price-product">
+                </div>
+                <div class="form-group w-3">
+                    <label for="color-product">Color Product</label>
+                    <input type="color" name="color" ngModel class="form-control" placeholder="Enter product color" id="color-product">
+                </div>
+                <div class="form-group w-3">
+                    <label for="category-product">Category Product</label>
+                    <select name="category" id="category-product" ngModel class="form-select">
+                        <option value="">Select Category</option>
+                        <option value="{{category}}" *ngFor="let category of categorysProduct">{{category}}</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group mb-3">
                 <label for="description-product">Description Product</label>
