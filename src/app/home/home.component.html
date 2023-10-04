@@ -2,7 +2,9 @@
 <ngb-carousel class="mb-5" *ngIf="popularProducts">
 	<ng-template *ngFor="let item of popularProducts" ngbSlide>
 		<div class="picsum-img-wrapper">
-			<img class="w-100 image-product-carosel" src="{{item.image}}" alt="Random first slide" />
+			<a routerLink="/details/{{item.id}}">
+                <img class="w-100 image-product-carosel" src="{{item.image}}" alt="Random first slide" />
+            </a>
 		</div>
 		<div class="carousel-caption">
 			<h3>{{item.name}}</h3>
@@ -20,7 +22,9 @@
             <div class="product-content mb-4">
                 <div class="product__item">
                     <div class="product__image">
-                        <img class="w-100" src="{{item.image}}" alt="Product">
+                        <a routerLink="/details/{{item.id}}">
+                            <img class="w-100" src="{{item.image}}" alt="Product">
+                        </a>
                     </div>
                     <div class="product__details">
                         <h3 class="product__head">New Apple Mobile</h3>
@@ -30,7 +34,7 @@
                         </div>
                     </div>
                     <div class="product__link">
-                        <a href=""><fa-icon [icon]="iconEye"></fa-icon>View Detail</a>
+                        <a routerLink="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon>View Detail</a>
                         <a href=""><fa-icon [icon]="iconCart"></fa-icon>Add To Cart</a>
                     </div>
                 </div>

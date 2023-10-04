@@ -128,5 +128,25 @@
       "image": "https://khomacbook.com/wp-content/uploads/2023/04/macbook-air-2019-768x538.jpg",
       "id": 18
     }
+  ],
+  "user": [
+    {
+      "name": "Le Huy Hieu",
+      "email": "lehuyhieu123@gmail.com",
+      "password": "123123",
+      "id": 1
+    },
+    {
+      "name": "Hiệu Lê",
+      "email": "user@gmail.com",
+      "password": "123123",
+      "id": 2
+    },
+    {
+      "name": "Hieu Le",
+      "email": "lehuyhieupro06182@gmail.com",
+      "password": "123123",
+      "id": 3
+    }
   ]
 }

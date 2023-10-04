@@ -1,4 +1,14 @@
 .product__detail {
+    & .color {
+        @include flex-l(row);
+        & span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-left: 1rem;
+        }
+    }
     .product__content {
         & img {
             height: 400px;

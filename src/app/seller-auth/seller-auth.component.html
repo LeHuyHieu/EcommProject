@@ -5,15 +5,15 @@
             <h1 class="text-center">Seller Sign-Up</h1>
             <div class="form-group mb-3">
                 <label for="seller-name">Name</label>
-                <input type="text" name="name" ngModel class="form-control" placeholder="Enter name" id="seller-name">
+                <input type="text" name="name" required ngModel class="form-control" placeholder="Enter name" id="seller-name">
             </div>
             <div class="form-group mb-3">
                 <label for="seller-password">Password</label>
-                <input type="password" name="password" ngModel class="form-control" placeholder="Enter Password" id="seller-password">
+                <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password" id="seller-password">
             </div>
             <div class="form-group mb-3">
                 <label for="seller-email">Email</label>
-                <input type="email" name="email" ngModel class="form-control" placeholder="Enter Email" id="seller-email">
+                <input type="email" name="email" required ngModel class="form-control" placeholder="Enter Email" id="seller-email">
             </div>
             <button class="btn btn-primary d-block m-auto mb-4">Sign-Up</button>
             <p>
@@ -28,11 +28,11 @@
             <p class="text-center text-danger mb-0">{{authError}}</p>
             <div class="form-group mb-3">
                 <label for="seller-email">Email</label>
-                <input type="email" name="email" ngModel class="form-control" placeholder="Enter Email" id="seller-email">
+                <input type="email" name="email" required #email="ngModel" ngModel class="form-control" placeholder="Enter Email" id="seller-email">
             </div>
             <div class="form-group mb-3">
                 <label for="seller-password">Password</label>
-                <input type="password" name="password" ngModel class="form-control" placeholder="Enter Password" id="seller-password">
+                <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password" id="seller-password">
             </div>
             <button class="btn btn-primary d-block m-auto mb-4">Login</button>
             <p>

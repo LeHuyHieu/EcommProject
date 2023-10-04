@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { SearchComponent } from '../search/search.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +12,12 @@ import { SearchComponent } from '../search/search.component';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   menuType: string = 'default';
   sellerName: string = '';
   searchResult: undefined | product[];
   showMenuSearch: boolean = false;
+  userName: string = '';
 
   iconClose = faTimes;
   constructor(
@@ -34,14 +36,26 @@ export class HeaderComponent implements OnInit {
             let sellerData = sellerStore && JSON.parse(sellerStore)[0];
             this.sellerName = sellerData.name;
           }
+        }else if(localStorage.getItem('user')) {
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData.name;
+          this.menuType = 'user';
         } else {
           this.menuType = 'default';
         }
       }
     });
   }
-  logout() {
-    this.seller.logout();
+  logoutSell() {
+    localStorage.removeItem('seller');
+    this.isSellerLoggedIn.next(false);
+    this.route.navigate(['/']);
+  }
+  logoutUser() {
+    localStorage.removeItem('user');
+    this.isSellerLoggedIn.next(false);
+    this.route.navigate(['/user-auth']);
   }
 
   searchProduct(query: KeyboardEvent) {
@@ -50,7 +64,7 @@ export class HeaderComponent implements OnInit {
       this.product.searchProducts(element.value).subscribe((result) => {
         if (result.length > 5) {
           result.length = 5;
-        } 
+        }
         this.searchResult = result;
         if (result.length === 0) {
           this.searchResult = undefined;
@@ -65,5 +79,8 @@ export class HeaderComponent implements OnInit {
 
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
+  }
+  redirectToDetail(id: number) {
+    this.route.navigate([`/details/${id}`]);
   }
 }

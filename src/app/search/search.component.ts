@@ -1,6 +1,6 @@
 import { product } from './../data-type';
-import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { faShoppingBasket, faEye } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from '../services/product.service';

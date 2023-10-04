@@ -36,12 +36,6 @@ export class SellService {
       });
   }
 
-  logout() {
-    localStorage.removeItem('seller');
-    this.isSellerLoggedIn.next(false);
-    this.router.navigate(['/']);
-  }
-
   reloadSellder() {
     if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true);

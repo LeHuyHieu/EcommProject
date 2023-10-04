@@ -1,6 +1,6 @@
 .signup,
 .login,
-.add-product-content {
+.add-product-content, .user__auth {
   @include flex-center(column);
 
   .common-form {

@@ -9,11 +9,11 @@
                             <img class="w-100" src="{{item.image}}" alt="Product">
                         </a>
                     </div>
-                    <div class="product__details">
+                    <div class="product__detail">
                         <h3 class="product__head text-start"><a routerLink="/details/{{item.id}}">{{item.name | titlecase}}</a></h3>
                         <div class="product__price flex-column text-start">
                             <p class="price w-100 mb-0"><strong>Price :</strong> ${{item.price}}</p>
-                            <p class="color w-100 mb-0"><strong>Color :</strong> {{item.color}}</p>
+                            <p class="color w-100 mb-0"><strong>Color :</strong> <span [style.backgroundColor]="item.color"></span></p>
                             <p class="w-100 mb-0"><strong>Category :</strong> {{item.category}}</p>
                             <p class="w-100 mb-0"><strong>Description :</strong> {{item.description}}</p>
                         </div>

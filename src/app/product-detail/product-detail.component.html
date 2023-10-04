@@ -20,9 +20,9 @@
                     <button class="button__product buy ms-2">Buy Now</button>
                 </div>
                 <div class="product__quantity ms-5">
-                    <button>+</button>
-                    <input type="text" value="1">
-                    <button>-</button>
+                    <button (click)="handleQuantity('plus');">+</button>
+                    <input type="text" value="{{productQuantity}}">
+                    <button (click)="handleQuantity('min');">-</button>
                 </div>
             </div>
         </div>
