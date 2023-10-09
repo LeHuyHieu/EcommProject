@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, OnInit, SimpleChanges } from '@angular/core';
 import { SellService } from '../services/sell.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
@@ -18,11 +18,11 @@ export class HeaderComponent implements OnInit {
   searchResult: undefined | product[];
   showMenuSearch: boolean = false;
   userName: string = '';
+  cartItem = 0;
 
   iconClose = faTimes;
   constructor(
     private route: Router,
-    private seller: SellService,
     private product: ProductService,
   ) {}
 
@@ -46,6 +46,15 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    let cartData = localStorage.getItem('localCart');
+    if(cartData) {
+      this.cartItem = JSON.parse(cartData).length;
+    }
+
+    this.product.cartData.subscribe((items) => {
+      this.cartItem = items.length;
+    })
   }
   logoutSell() {
     localStorage.removeItem('seller');

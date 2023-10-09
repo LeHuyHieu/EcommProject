@@ -1,7 +1,8 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -11,8 +12,9 @@ import { HttpClient } from '@angular/common/http';
 export class SellerAddProductComponent {
   addProductMessage: string | undefined;
 
-  constructor(private product: ProductService, private http: HttpClient) {}
+  constructor(private product: ProductService, private route: Router) {}
   ngOnInit(): void {}
+  // sellerId: number | undefined;
 
   categorysProduct = [
     'Mobile',
@@ -25,8 +27,14 @@ export class SellerAddProductComponent {
   ];
 
   submit(data: product) {
+    // if(localStorage.getItem('seller')) {
+    //   let localSto = localStorage.getItem('seller');
+    //   let sellerData = localSto && JSON.parse(localSto)[0];
+    //   console.log(sellerData.id);
+    //   this.sellerId = sellerData.id;
+    // }
+
     this.product.addProduct(data).subscribe((result) => {
-      console.log(result);
       if (result) {
         this.addProductMessage = 'Product is successfully added';
       }
@@ -34,16 +42,6 @@ export class SellerAddProductComponent {
     });
   }
 
-  // onImageUpload(event: any) {
-  //   const file = event.target.files[0];
-
-  //   if (file) {
-  //     this.product.uploadImage(file).subscribe(response => {
-  //       console.log('Hình ảnh đã được tải lên:', response);
-  //     }, error => {
-  //       console.error('Lỗi khi tải lên hình ảnh:', error);
-  //     });
-  //   }
-  // }
+  
 
 }

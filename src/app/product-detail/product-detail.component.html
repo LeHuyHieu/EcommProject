@@ -16,7 +16,8 @@
             </div>
             <div class="d-flex align-items-center mb-4">
                 <div class="product__link">
-                    <button class="button__product me-2">Add to cart</button>
+                    <button class="button__product me-2" *ngIf="!removeCart" (click)="AddToCart();">Add to cart</button>
+                    <button class="button__product me-2" *ngIf="removeCart" (click)="RemoveToCart(productResult.id);">Remove to cart</button>
                     <button class="button__product buy ms-2">Buy Now</button>
                 </div>
                 <div class="product__quantity ms-5">

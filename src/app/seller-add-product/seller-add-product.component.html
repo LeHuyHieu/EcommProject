@@ -3,6 +3,7 @@
     <p class="text-center text-success">{{addProductMessage}}</p>
     <div class="add-product-content">
         <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" method="post" class="common-form border" enctype="multipart/form-data">
+            <!-- <input type="hidden" name="seller-id" #sellerId="ngModel" ngModel="{{sellerId}}"> -->
             <div class="form-group mb-3">
                 <label for="name-product">Name Product</label>
                 <input type="text" name="name" ngModel class="form-control" placeholder="Enter product name" id="name-product">
