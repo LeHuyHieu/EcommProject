@@ -1,5 +1,5 @@
 <nav class="nav">
-    <h1><a href="/">E-Comm</a></h1>
+    <h1><a routerLink="/">E-Comm</a></h1>
     <div class="form-group position-relative" *ngIf="menuType === 'default'">
         <input type="text" #searchInput (keyup)="searchProduct($event);" (blur)="hideSearch();" class="form-control" placeholder="Tìm kiếm sản phẩm">
         <button class="btn btn-active" type="submit" (click)="submitSearch(searchInput.value);"><i class="fas fa-search"></i></button>
@@ -14,7 +14,6 @@
         <ul *ngSwitchCase="'default'">
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/seller-auth">Seller</a></li>
-            <li><a routerLink="/cart">Cart({{cartItem}})</a></li>
             <li><a routerLink="/user-auth">Login / Sing-Up</a></li>
         </ul>
         <ul *ngSwitchCase="'user'">

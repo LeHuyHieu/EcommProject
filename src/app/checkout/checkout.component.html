@@ -1,0 +1,58 @@
+<div class="checkout">
+    <h2><fa-icon [icon]="cash"></fa-icon> Pays</h2>
+    <p>Please check customer information and shopping cart information before payment</p>
+    <div class="row mt-3">
+        <div class="col-sm-7 col-12">
+            <div class="checkout__form">
+                <h3>Customer Infomation</h3>
+                <form #orderData="ngForm" (ngSubmit)="orderNow(orderData.value);">
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" ngModel class="form-control" placeholder="Enter user email">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="adress" class="form-label">Adress</label>
+                        <input type="text" name="adress" id="adress" ngModel class="form-control" placeholder="Enter adress detail">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" name="phone" id="phone" ngModel class="form-control" placeholder="Enter user phone">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="cash" class="form-label cursor me-3">
+                            <input type="radio" value="cash" ngModel name="payments" id="cash"> <span class="pe-2">Cash</span>
+                        </label>
+                        <label for="transfer" class="form-label cursor me-3">
+                            <input type="radio" value="transfer" ngModel name="payments" id="transfer"> <span class="pe-2">Transfer</span>
+                        </label>
+                        <label for="ship" class="form-label cursor me-3">
+                            <input type="radio" value="ship" ngModel name="payments" id="ship"> <span class="pe-2">Ship COD</span>
+                        </label>
+                    </div>
+                    <button class="btn__remove w-100">Order Now</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-5 col-12">
+            <div class="cart">
+                <h3>Cart <span>({{countProduct}})</span></h3>
+                <div class="card-body">
+                    <div class="item flex" *ngFor="let item of curentData">
+                        <div class="py-2 px-3">
+                            <h5 class="product">{{item.name}} <span>$ {{item.price}}</span></h5>
+                            <span>$ {{item.price}} x {{item.quantity}}</span>
+                        </div>
+                    </div>
+                    <div class="item flex total">
+                        <div class="p-3">
+                            <h5>Total: <h6>$ {{totalPrice}}.00</h6></h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card-footer mt-3">
+                    <input type="text" name="code" #code ngModel placeholder="Code"><button class="btn__remove">Confirm</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

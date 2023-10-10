@@ -1,0 +1,46 @@
+<div class="cart__page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="detail p-3 border rounded">
+                    <h2 class="fw-normal fs-4 mb-4">My Cart</h2>
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr class="table-light">
+                                <th style="width: 50px;"></th>
+                                <th>Images</th>
+                                <th>Name</th>
+                                <th style="width: 120px;">Price</th>
+                                <th style="width: 120px;">Quantity</th>
+                                <th style="width: 150px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of curentCartData">
+                                <td><input type="checkbox" name="select-delete"></td>
+                                <td><div class="detail__product__img"><img src="{{item.image}}" alt="" class="img-fluid"></div></td>
+                                <td>{{item.name}}</td>
+                                <td>$ {{item.price}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td><button class="btn__remove">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="summary border rounded p-3">
+                    <h2 class="fw-normal fs-4 mb-4">Summary</h2>
+                    <ul class="summary__list">
+                        <li><span>Amount</span><span>{{priceSummary.price}}</span></li>
+                        <li><span>Tax</span><span>{{priceSummary.tax}}</span></li>
+                        <li><span>Delivery</span><span>{{priceSummary.delivery}}</span></li>
+                        <li><span>Discount</span><span>{{priceSummary.discount}}</span></li>
+                        <li><span>Total</span><h4 class="fw-bold">{{priceSummary.total}}</h4></li>
+                        <button (click)="checkout();" class="btn__remove w-100">Checkout</button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

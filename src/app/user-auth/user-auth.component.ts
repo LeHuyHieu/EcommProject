@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Login, SignUp, cart, product } from '../data-type';
 import { UserService } from '../services/user.service';
 import { ProductService } from '../services/product.service';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-auth',
@@ -11,7 +12,11 @@ import { ProductService } from '../services/product.service';
 export class UserAuthComponent implements OnInit {
   showForm = true;
   authErr = '';
-  constructor(private user: UserService, private product: ProductService) {}
+  constructor(
+    private user: UserService, 
+    private product: ProductService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.user.userAuthReload();
@@ -25,10 +30,17 @@ export class UserAuthComponent implements OnInit {
     this.user.invalidUserAuth.subscribe((result) => {
       if (result) {
         this.authErr = 'Please enter valid details';
-      } 
-      // else {
+      }else {
         // this.localCartToRemoteCart();
-      // }
+        let prevPage: string = '';
+        this.router.events.subscribe((event)=> {
+          if(event instanceof NavigationStart) {
+            prevPage = this.router.url;
+            console.log(event);
+            console.log(prevPage);
+          }
+        })
+      }
     });
   }
 

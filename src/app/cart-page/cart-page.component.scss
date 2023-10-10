@@ -1,0 +1,43 @@
+$--danger: rgb(240, 72, 38);
+$--white: #fff;
+$--light: #e2e6e9;
+
+.cart__page {
+    .detail {
+        &__product__img {
+            margin: 0 auto;
+            max-width: 80px;
+        }
+        table {
+            & td > input[type="checkbox"] {
+                cursor: pointer;
+            }
+        }
+        .btn__remove {
+            border: none;
+            outline: none;
+            background-color: $--danger;
+            padding: .5rem 1.5rem;
+            border-radius: .25rem;
+            color: $--white;
+        }
+    }
+    .summary {
+        &__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: .5rem;
+                &:nth-child(5) {
+                    border-top: 1px solid $--light;
+                    padding-top: 1rem;
+                    color: $--danger;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
