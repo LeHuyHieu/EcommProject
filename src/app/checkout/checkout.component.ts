@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from '../services/product.service';
 import { cart, order } from '../data-type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -13,7 +14,8 @@ export class CheckoutComponent {
   totalPrice: number | undefined;
   curentData: cart[] | undefined;
   countProduct: number = 0;
-  constructor(private product: ProductService) {}
+  orderMessage: string | undefined;
+  constructor(private product: ProductService, private router: Router) {}
 
   ngOnInit(): void {
     this.product.curentCart().subscribe((data) => {
@@ -26,8 +28,6 @@ export class CheckoutComponent {
         }
       });
       this.totalPrice = price + price / 10 + 100 - price / 10;
-      console.log(data);
-      console.log(this.totalPrice);
     });
   }
 
@@ -39,11 +39,23 @@ export class CheckoutComponent {
       let orderData: order = {
         ...data,
         totalPrice: this.totalPrice,
-        userId
+        userId,
+        id: undefined
       }
+      
+      this.curentData?.forEach((item) => {
+        setTimeout(() => {
+          item.id && this.product.deteleCartItems(item.id)
+        }, 600);
+      })
+
       this.product.orderNow(orderData).subscribe((result) => {
         if(result) {
-          alert('Order successfully')
+          this.orderMessage = 'Your order has been placed successfully';
+          setTimeout(() => {
+            this.router.navigate(['/my-orders']);
+            this.orderMessage = undefined;
+          }, 3000);
         }
       })
     }

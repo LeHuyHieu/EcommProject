@@ -16,13 +16,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr *ngIf="!dataNull">
+                                <td colspan="6">Please add product to cart</td>
+                            </tr>
                             <tr *ngFor="let item of curentCartData">
                                 <td><input type="checkbox" name="select-delete"></td>
                                 <td><div class="detail__product__img"><img src="{{item.image}}" alt="" class="img-fluid"></div></td>
                                 <td>{{item.name}}</td>
                                 <td>$ {{item.price}}</td>
                                 <td>{{item.quantity}}</td>
-                                <td><button class="btn__remove">Delete</button></td>
+                                <td><button class="btn__remove" (click)="removeToCart(item.id)">Delete</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -37,7 +40,7 @@
                         <li><span>Delivery</span><span>{{priceSummary.delivery}}</span></li>
                         <li><span>Discount</span><span>{{priceSummary.discount}}</span></li>
                         <li><span>Total</span><h4 class="fw-bold">{{priceSummary.total}}</h4></li>
-                        <button (click)="checkout();" class="btn__remove w-100">Checkout</button>
+                        <button (click)="checkout();" class="btn__remove w-100" [ngClass]="[!dataNull ? 'disabled' : '']" [disabled]="!dataNull">Checkout</button>
                     </ul>
                 </div>
             </div>

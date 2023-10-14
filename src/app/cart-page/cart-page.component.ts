@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartPageComponent implements OnInit {
   curentCartData: cart[] | undefined;
+  dataNull = false;
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,
@@ -20,20 +21,7 @@ export class CartPageComponent implements OnInit {
   constructor(private product: ProductService, private route: Router) {}
 
   ngOnInit(): void {
-    this.product.curentCart().subscribe((data) => {
-      this.curentCartData = data;
-      let price = 0;
-      data.forEach((item) => {
-        if(item.quantity) {
-          price = price + (+item.price * item.quantity);
-        }
-      });
-      this.priceSummary.price = price;
-      this.priceSummary.discount = price / 10;
-      this.priceSummary.tax = price / 10;
-      this.priceSummary.delivery = 100;
-      this.priceSummary.total = price + price / 10 + 100 - price / 10;
-    });
+    this.loadDetails();
   }
 
   removeItem(cartId: number) {
@@ -45,5 +33,33 @@ export class CartPageComponent implements OnInit {
 
   checkout() {
     this.route.navigate(['/checkout']);
+  }
+
+  loadDetails() {
+    this.product.curentCart().subscribe((data) => {
+      this.curentCartData = data;
+      if(this.curentCartData.length) {
+        this.dataNull = true;
+      }
+      let price = 0;
+      data.forEach((item) => {
+        if (item.quantity) {
+          price = price + +item.price * item.quantity;
+        }
+      });
+      this.priceSummary.price = price;
+      this.priceSummary.discount = price / 10;
+      this.priceSummary.tax = price / 10;
+      this.priceSummary.delivery = 100;
+      this.priceSummary.total = price + price / 10 + 100 - price / 10;
+    });
+  }
+
+  removeToCart(cartId: number | undefined) {
+    cartId &&
+      this.curentCartData &&
+      this.product.removeToCart(cartId).subscribe((result) => {
+        this.loadDetails();
+      });
   }
 }

@@ -30,3 +30,7 @@
     border-radius: .25rem;
     color: $--white;
 }
+.btn__remove.disabled {
+    background-color: rgba($color: $--danger, $alpha: .4);
+    cursor: not-allowed;
+}

@@ -76,7 +76,7 @@
     },
     {
       "name": "Apple Watch A15",
-      "price": "1.000.000",
+      "price": "10000.00",
       "color": "#050505",
       "category": "Apple Watch",
       "description": "Apple Watch A15",
@@ -149,65 +149,6 @@
       "id": 3
     }
   ],
-  "cart": [
-    {
-      "name": "Macbook",
-      "price": "500.000",
-      "color": "#ffffff",
-      "category": "Labtop",
-      "description": "Macbook Vip pro",
-      "image": "https://khomacbook.com/wp-content/uploads/2023/04/macbook-air-2019-768x538.jpg",
-      "quantity": 1,
-      "userId": 2,
-      "productId": 2,
-      "id": 2
-    },
-    {
-      "name": "Samsung mp4",
-      "price": "320.00",
-      "color": "#000000",
-      "category": "Mobile",
-      "description": "Samsung Mp4 ",
-      "image": "https://cdn.hoanghamobile.com/i/productlist/dsp/Uploads/2022/10/20/image-removebg-preview-27.png",
-      "quantity": 1,
-      "userId": 2,
-      "productId": 3,
-      "id": 3
-    },
-    {
-      "name": "Tablet Vip Pro A300",
-      "price": "320.00",
-      "color": "#000000",
-      "category": "Tablet",
-      "description": "Tablet Vip Pro A300",
-      "image": "https://p2-ofp.static.pub/fes/cms/2021/10/28/juqs65pgl1gh3dysi7yv1tnvtsiqva364946.png",
-      "quantity": 1,
-      "userId": 2,
-      "productId": 14,
-      "id": 4
-    },
-    {
-      "name": "iphone 15pro max",
-      "price": "320.00",
-      "color": "#828282",
-      "category": "Mobile",
-      "description": "Iphone Pro Max",
-      "image": "https://trangthienlong.com.vn/wp-content/uploads/2023/09/iphone-15-pro-max-mau-vang-titanium-256gb-512gb-1tb-trang-thien-long-mobile-768x768.jpg",
-      "quantity": 5,
-      "userId": 2,
-      "productId": 1,
-      "id": 5
-    }
-  ],
-  "orders": [
-    {
-      "email": "user@gmail.com",
-      "adress": "35/50 Hiep Binh Chanh TP Thu Duc",
-      "phone": "0386208003",
-      "payments": "cash",
-      "totalPrice": 2840,
-      "userId": 2,
-      "id": 1
-    }
-  ]
+  "cart": [],
+  "orders": []
 }
