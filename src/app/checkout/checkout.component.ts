@@ -20,14 +20,18 @@ export class CheckoutComponent {
   ngOnInit(): void {
     this.product.curentCart().subscribe((data) => {
       this.curentData = data;
-      this.countProduct = this.curentData.length;
-      let price = 0;
-      data.forEach((item) => {
-        if(item.quantity) {
-          price = price + (+item.price * item.quantity);
-        }
-      });
-      this.totalPrice = price + price / 10 + 100 - price / 10;
+      if(this.curentData.length > 0) {
+        this.countProduct = this.curentData.length;
+        let price = 0;
+        data.forEach((item) => {
+          if(item.quantity) {
+            price = price + (+item.price * item.quantity);
+          }
+        });
+        this.totalPrice = price + price / 10 + 100 - price / 10;
+      }else {
+        this.router.navigate(['/']);
+      }
     });
   }
 
