@@ -1,49 +1,48 @@
 <div class="container">
   <div class="add-product">
-    <h1 class="text-center">Add new product</h1>
+    <h1 class="text-center">Thêm sản phẩm</h1>
     <p class="text-center text-success">{{addProductMessage}}</p>
     <div class="add-product-content">
       <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" method="post" class="common-form border"
         enctype="multipart/form-data">
         <!-- <input type="hidden" name="seller-id" #sellerId="ngModel" ngModel="{{sellerId}}"> -->
         <div class="form-group mb-3">
-          <label for="name-product">Name Product</label>
-          <input type="text" name="name" ngModel class="form-control" placeholder="Enter product name"
+          <label for="name-product">Tên sản phẩm</label>
+          <input type="text" name="name" ngModel class="form-control" placeholder="Nhập tên sản phẩm"
             id="name-product">
         </div>
         <div class="flex__center mb-3">
           <div class="form-group w-3">
-            <label for="price-product">Price Product</label>
-            <input type="text" name="price" ngModel class="form-control" placeholder="Enter product price"
+            <label for="price-product">Giá sản phẩm</label>
+            <input type="text" name="price" ngModel class="form-control" placeholder="Nhập giá sản phẩm"
               id="price-product">
           </div>
           <div class="form-group w-3">
-            <label for="color-product">Color Product</label>
-            <input type="color" name="color" ngModel class="form-control" placeholder="Enter product color"
+            <label for="color-product">Màu sản phẩm</label>
+            <input type="color" name="color" ngModel class="form-control" placeholder="Nhập màu sản phẩm"
               id="color-product">
           </div>
           <div class="form-group w-3">
-            <label for="category-product">Category Product</label>
+            <label for="category-product">Danh mục sản phẩm</label>
             <select name="category" id="category-product" ngModel class="form-select">
-              <option value="">Select Category</option>
+              <option value="">Chọn danh mục</option>
               <option value="{{category}}" *ngFor="let category of categorysProduct">{{category}}</option>
             </select>
           </div>
         </div>
         <div class="form-group mb-3">
-          <label for="description-product">Description Product</label>
-          <textarea type="text" name="description" ngModel class="form-control" placeholder="Enter product description"
+          <label for="description-product">Mô tả sản phẩm</label>
+          <textarea type="text" name="description" ngModel class="form-control" placeholder="Nhập mô tả sản phẩm"
             id="description-product"></textarea>
         </div>
         <div class="form-group mb-3">
-          <label for="image-product">Image Product</label>
+          <label for="image-product">URL ảnh sản phẩm</label>
           <!-- <input type="file" name="image" (change)="onImageUpload($event)" ngModel class="form-control" placeholder="Enter product image url" id="image-product"> -->
-          <input type="text" ngModel name="image" class="form-control" placeholder="Enter Product Image URL"
+          <input type="text" ngModel name="image" class="form-control" placeholder="Nhập url ảnh sản phẩm"
             id="image-product">
         </div>
-        <button class="btn btn-primary d-block m-auto">Add Product</button>
+        <button class="btn btn-primary d-block m-auto">Thêm mới</button>
       </form>
     </div>
   </div>
-
 </div>

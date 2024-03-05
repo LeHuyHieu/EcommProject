@@ -1,7 +1,7 @@
 <div class="container">
   <div class="product__detail mt-5">
     <div class="row align-items-center" *ngIf="productResult">
-      <h2 class="fw-normal fs-3 mb-4">Product Detail</h2>
+      <h2 class="fw-normal fs-3 mb-4">Chi tiết sản phẩm</h2>
       <div class="col-sm-6">
         <div class="product__content">
           <img class="w-100" src="{{productResult.image}}" alt="">
@@ -10,16 +10,15 @@
       <div class="col-sm-6">
         <div class="product__content mb-4">
           <h3 class="product__head mb-4">{{productResult.name | titlecase}}</h3>
-          <p class="price mb-0"><strong>Price :</strong> $ {{productResult.price}}</p>
-          <p class="color mb-0"><strong>Color :</strong> <span [style.backgroundColor]="productResult.color"></span></p>
-          <p class="category mb-0"><strong>Category :</strong> {{productResult.category}}</p>
-          <p class="description mb-0"><strong>Description :</strong> {{productResult.description}}</p>
+          <p class="price mb-0"><strong>Giá :</strong> $ {{productResult.price}}</p>
+          <p class="color mb-0"><strong>Màu :</strong> <span [style.backgroundColor]="productResult.color"></span></p>
+          <p class="category mb-0"><strong>Danh mục :</strong> {{productResult.category}}</p>
+          <p class="description mb-0"><strong>Mô tả :</strong> {{productResult.description}}</p>
         </div>
         <div class="d-flex align-items-center mb-4">
           <div class="product__link">
-            <button class="button__product buy me-2" *ngIf="!removeCart" (click)="AddToCart();">Add to cart</button>
-            <button class="button__product buy me-2" *ngIf="removeCart" (click)="RemoveToCart(productResult.id);">Remove to
-              cart</button>
+            <button class="button__product buy me-2" *ngIf="!removeCart" (click)="AddToCart();">Thêm giỏ hàng</button>
+            <button class="button__product buy me-2" *ngIf="removeCart" (click)="RemoveToCart(productResult.id);">Xóa giỏ hàng</button>
           </div>
           <div class="product__quantity ms-5">
             <button (click)="handleQuantity('plus');">+</button>

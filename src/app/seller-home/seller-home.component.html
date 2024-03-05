@@ -1,28 +1,28 @@
 <div class="container">
   <div class="list-product">
-    <h1 class="text-center">List Product</h1>
+    <h1 class="text-center">Danh sách</h1>
     <p class="text-center text-success"> {{productMessage}} </p>
     <div class="p-3 border rounded">
       <table class="table table-hover table-bordered mb-0">
         <thead>
           <tr class="table-active">
             <th style="width: 5%;">ID</th>
-            <th style="width: 15%;">Name</th>
-            <th style="width: 10%;">Price</th>
-            <th style="width: 10%;">Category</th>
-            <th style="width: 10%;">Color</th>
-            <th style="width: 10%;">Images</th>
-            <th style="width: 30%;">Description</th>
-            <th style="width: 10%;">Action</th>
+            <th style="width: 15%;">Tên</th>
+            <th style="width: 10%;">Giá</th>
+            <th style="width: 10%;">Danh mục</th>
+            <th style="width: 10%;">Màu</th>
+            <th style="width: 10%;">Ảnh</th>
+            <th style="width: 30%;">Mô tả</th>
+            <th style="width: 10%;">Hành động</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of productList">
             <td class="text-center"> {{item.id}} </td>
-            <td class="text-center"> {{item.name}} </td>
-            <td class="text-center"> {{item.price}} </td>
+            <td class="text-center"> {{item.name | titlecase}} </td>
+            <td class="text-center"> {{item.price | currency}} </td>
             <td class="text-center"> {{item.category}} </td>
-            <td class="text-center"> {{item.color}} </td>
+            <td class="text-center"> <button class="btn border py-2 px-2" [style.backgroundColor]="item.color"></button> </td>
             <td class="text-center"> <img src="{{item.image}}" width="60px" alt=""> </td>
             <td class="text-center"> {{item.description}} </td>
             <td class="text-center">

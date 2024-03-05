@@ -39,9 +39,9 @@ export class SearchComponent implements OnInit {
       this.product.searchProducts(query).subscribe((result) => {
         this.searchResults = result;
         if (result.length === 0) {
-          this.querySearch = 'There are no products related to the ' + query;
+          this.querySearch = 'Không có sản phẩm nào liên quan đến: ' + query;
         } else {
-          this.querySearch = 'All products about ' + query;
+          this.querySearch = 'Tất cả sản phẩm về: ' + query;
         }
       });
   }

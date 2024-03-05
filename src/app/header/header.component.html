@@ -1,6 +1,15 @@
 <div class="container">
   <nav class="nav">
-    <h1><a class="logo" routerLink="/">E-Comm</a></h1>
+    <h1>
+      <a class="logo border px-2 rounded" routerLink="/">
+        <span class="text-warning">L</span>
+        <span class="text-info">i</span>
+        <span class="text-primary">m</span>
+        <span class="text-danger">u</span>
+        <span class="text-success">P</span>
+        <span class="text-dark">a</span>
+      </a>
+    </h1>
     <div class="form-group filter-search position-relative" *ngIf="menuType !== 'seller'">
       <input type="text" #searchInput (keyup)="searchProduct($event);" (blur)="hideSearch();" class="form-control"
         placeholder="Tìm kiếm sản phẩm">
@@ -15,22 +24,36 @@
     </div>
     <div [ngSwitch]="menuType">
       <ul class="list__right" *ngSwitchCase="'default'">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/seller-auth">Seller</a></li>
-        <li><a routerLink="/user-auth">Login</a></li>
+        <li><a routerLink="/">Trang chủ</a></li>
+        <li><a routerLink="/seller-auth">Người bán</a></li>
+        <li><a routerLink="/user-auth">Đăng nhập</a></li>
       </ul>
       <ul class="list__right" *ngSwitchCase="'user'">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/cart">Cart({{cartItem}})</a></li>
-        <li><a routerLink="/my-orders">My Orders</a></li>
-        <li><a routerLink="/user-auth">{{userName | titlecase}}</a></li>
-        <li><a href="javascript:void(0);" (click)="logoutUser()">Logout</a></li>
+        <li><a routerLink="/">Trang chủ</a></li>
+        <li>
+          <a class="dropdown-toggle" type="button" (click)="dropdown()">
+            Tài khoản
+          </a>
+          <ul class="dropdown-menu" [ngClass]="{'show': show}" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="javascript:void(0);">{{ userName | titlecase}}</a></li>
+            <li><a class="dropdown-item" routerLink="/cart">Giỏ hàng({{cartItem}})</a></li>
+            <li><a class="dropdown-item" routerLink="/my-orders">Đơn hàng</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" (click)="logoutUser()">Đăng xuất</a></li>
+          </ul>
+        </li>
       </ul>
       <ul class="list__right" *ngSwitchCase="'seller'">
-        <li><a routerLink="/seller-home">List</a></li>
-        <li><a routerLink="/seller-add-product">Add Product</a></li>
-        <li><a href="javascript:void(0);">{{ sellerName | titlecase }}</a></li>
-        <li><a href="javascript:void(0);" (click)="logoutSell()">Logout</a></li>
+        <li class="dropdown">
+          <button class="btn dropdown-toggle" type="button" (click)="dropdown()">
+            Tài khoản
+          </button>
+          <ul class="dropdown-menu" [ngClass]="{'show': show}" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" routerLink="/seller-home">Danh sách</a></li>
+            <li><a class="dropdown-item" routerLink="/seller-add-product">Thêm Sp</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">{{ sellerName | titlecase }}</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" (click)="logoutSell()">Đăng xuất</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>

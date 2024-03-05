@@ -1,27 +1,10 @@
 $--black: #000;
+$--white: #fff;
+$--orange: rgb(240, 72, 38);
 
 .h-85 {
   height: 75vh;
   max-height: 75vh;
-}
-h6.color span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  border: 1px solid $--black;
-  margin-left: 1rem;
-}
-.product__link {
-  a {
-    color: rgba($color: $--black, $alpha: 0.6);
-    transition: 0.2s;
-    border: 1px solid rgba($color: $--black, $alpha: 0.3);
-    &:hover {
-      color: $--black;
-      box-shadow: 2px 2px 3px rgba($color: $--black, $alpha: 0.1);
-    }
-  }
 }
 
 .carousel-caption {
@@ -36,9 +19,29 @@ h6.color span {
     font-size: 3rem;
   }
   .btn-buy {
-    background-color: rgb(240, 72, 38);
-    color: #fff;
-    border: 1px solid rgb(240, 72, 38);
+    background-color: $--orange;
+    color: $--white;
+    border: 1px solid $--orange;
+    border-radius: 100rem;
+    overflow: hidden;
+    position: relative;
+    padding-inline: 2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: -12px;
+      transform: rotate(30deg);
+      height: 150%;
+      width: 15px;
+      background-color: rgba($color: $--white, $alpha: .5);
+      transition: .3s;
+    }
+    &:hover {
+      &::before {
+        left: calc(100% + 20px);
+      }
+    }
   }
 }
 
@@ -46,5 +49,40 @@ h6.color span {
   .image-product-carosel {
     min-height: 70vh;
     max-height: 75vh;
+  }
+}
+
+.product__list__wrapper {
+  .product__item {
+    .product__details {
+      .product__head {
+        font-size: 1.5rem;
+        a {
+          text-decoration: none;
+          text-transform: capitalize;
+          color: $--black;
+          cursor: pointer;
+        }
+      }
+      h6.color span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid $--black;
+        margin-left: 1rem;
+      }
+    }
+    .product__link {
+      a {
+        color: rgba($color: $--black, $alpha: 0.6);
+        transition: 0.2s;
+        border: 1px solid rgba($color: $--black, $alpha: 0.3);
+        &:hover {
+          color: $--black;
+          box-shadow: 2px 2px 3px rgba($color: $--black, $alpha: 0.1);
+        }
+      }
+    }
   }
 }

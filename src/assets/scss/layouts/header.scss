@@ -1,7 +1,9 @@
 .nav {
   @include flex-sp(row);
+  flex-wrap: wrap;
   padding: 1em 0;
   h1 {
+    width: 25%;
     a {
       color: $--black;
       font-size: 40px;
@@ -12,7 +14,7 @@
 
   .form-group {
     display: inline-flex;
-    width: 40%;
+    width: 45%;
     & input[type="text"] {
       border-color: $--black;
       border-radius: 0.25rem 0 0 0.25rem;
@@ -43,6 +45,7 @@
       box-shadow: 5px 6px 10px $--light;
       border: 1px solid $--light;
       border-radius: 0 0 1rem 1rem;
+      list-style: none;
       & span.close {
         position: absolute;
         right: 10px;
@@ -66,7 +69,7 @@
     }
   }
 
-  ul {
+  .list__right {
     @include flex-ul();
     margin: 0;
     padding: 0;

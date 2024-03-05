@@ -45,7 +45,7 @@ export interface priceSummary {
 export interface order {
   email: string;
   adress: string;
-  phone: number;
+  phone: string;
   payments: string;
   totalPrice: number;
   userId: number;

@@ -24,7 +24,7 @@
 
   <!-- List Product -->
   <div class="product__list__wrapper">
-    <h2 class="fw-normal fs-3 mb-4">Trendy Product</h2>
+    <h2 class="fw-normal fs-3 mb-4">Sản phẩm mới</h2>
     <div class="row">
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of trendyProducts">
         <div class="product-content mb-4">
@@ -34,11 +34,11 @@
                 <img class="w-100" src="{{item.image}}" alt="Product">
               </a>
             </div>
-            <div class="product__details mb-4">
-              <h3 class="product__head">New Apple Mobile</h3>
+            <div class="product__details mb-4 pt-2">
+              <h3 class="product__head"><a routerLink="/details/{{item.id}}">{{ item.name }}</a></h3>
               <div class="product__price">
-                <h6 class="price">Price : {{item.price | currency}}</h6>
-                <h6 class="color">Color : <span [style.backgroundColor]="item.color"></span></h6>
+                <h6 class="price">Giá : {{ item.price | currency }}</h6>
+                <h6 class="color">Màu : <span [style.backgroundColor]="item.color"></span></h6>
               </div>
             </div>
             <div class="product__link">

@@ -35,7 +35,7 @@ export class CheckoutComponent {
     });
   }
 
-  orderNow(data: {email: string, adress:string, phone: number, payments: string}) {
+  orderNow(data: {email: string, adress:string, phone: string, payments: string}) {
     let user = localStorage.getItem('user');
     let userId = user && JSON.parse(user).id;
 
@@ -46,7 +46,7 @@ export class CheckoutComponent {
         userId,
         id: undefined
       }
-      
+
       this.curentData?.forEach((item) => {
         setTimeout(() => {
           item.id && this.product.deteleCartItems(item.id)

@@ -1,0 +1,29 @@
+$--black: #000;
+$--white: #fff;
+$--orange: rgb(240, 72, 38);
+
+.button__product.buy {
+  background-color: $--orange;
+    color: $--white;
+    border: 1px solid $--orange;
+    border-radius: 100rem;
+    overflow: hidden;
+    position: relative;
+    padding-inline: 2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: -12px;
+      transform: rotate(30deg);
+      height: 150%;
+      width: 15px;
+      background-color: rgba($color: $--white, $alpha: .5);
+      transition: .3s;
+    }
+    &:hover {
+      &::before {
+        left: calc(100% + 20px);
+      }
+    }
+}

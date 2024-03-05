@@ -1,16 +1,16 @@
 <div class="container">
   <div class="my-orders">
-    <h2 class="">My Order</h2>
+    <h2 class="">Đơn hàng</h2>
     <div class="row">
       <div class="border p-3 rounded">
         <table class="table table-bordered mb-0">
           <thead>
             <tr>
-              <th>Order Id</th>
-              <th>Order</th>
-              <th>Price</th>
-              <th>Status</th>
-              <th class="col-2">Action</th>
+              <th>Id</th>
+              <th>Đơn hàng</th>
+              <th>Giá</th>
+              <th>Trạng thái</th>
+              <th class="col-2">Hành động</th>
             </tr>
           </thead>
           <tbody>
@@ -24,8 +24,8 @@
                 </div>
               </td>
               <td>$ {{item.totalPrice}}</td>
-              <td>Order Success</td>
-              <td><button class="btn__remove" (click)="cancelOrder(item.id);">Cancel order</button></td>
+              <td>Đặt hàng thành công</td>
+              <td><button class="btn__remove" (click)="cancelOrder(item.id);">Hủy đơn hàng</button></td>
             </tr>
           </tbody>
         </table>

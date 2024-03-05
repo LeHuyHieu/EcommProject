@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   showMenuSearch: boolean = false;
   userName: string = '';
   cartItem = 0;
+  show = false;
 
   iconClose = faTimes;
   constructor(
@@ -92,6 +93,10 @@ export class HeaderComponent implements OnInit {
 
   hideSearch() {
     this.searchResult = undefined;
+  }
+
+  dropdown() {
+    this.show = !this.show;
   }
 
   submitSearch(val: string) {

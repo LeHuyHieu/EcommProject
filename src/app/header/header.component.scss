@@ -5,18 +5,18 @@ $-white: #fff;
   .logo {
     font-family: "Madimi One", sans-serif;
   }
-  ul.list__right {
+  .list__right {
     li > a {
       display: inline-block;
-      padding: .1rem .5rem;
+      padding: 0.1rem 0.5rem;
       color: $-black;
       border-radius: 10px;
       margin-left: 10px;
       font-weight: 400;
-      transition: .3s;
+      transition: 0.3s;
       position: relative;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         width: 30%;
         height: 2px;
@@ -25,11 +25,20 @@ $-white: #fff;
         left: 0;
         right: 0;
         margin: 0 auto;
-        transition: .2s;
+        transition: 0.2s;
       }
       &:hover {
         &::before {
           width: 100%;
+        }
+      }
+    }
+    .dropdown-menu {
+      & .dropdown-item {
+        margin-left: 0;
+        margin-bottom: .3rem;
+        &::before {
+          display: none;
         }
       }
     }

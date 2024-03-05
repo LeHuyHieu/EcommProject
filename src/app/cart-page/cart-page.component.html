@@ -8,12 +8,11 @@
             <table class="table table-bordered table-hover mb-0">
               <thead>
                 <tr class="table-light">
-                  <th style="width: 50px;"></th>
-                  <th>Images</th>
-                  <th>Name</th>
-                  <th style="width: 120px;">Price</th>
-                  <th style="width: 120px;">Quantity</th>
-                  <th style="width: 150px;">Action</th>
+                  <th>Ảnh</th>
+                  <th>Tên</th>
+                  <th style="width: 120px;">Giá</th>
+                  <th style="width: 100px;">Số lượng</th>
+                  <th style="width: 100px;">Hành động</th>
                 </tr>
               </thead>
               <tbody>
@@ -21,14 +20,13 @@
                   <td colspan="6">Please add product to cart</td>
                 </tr>
                 <tr *ngFor="let item of curentCartData">
-                  <td><input type="checkbox" name="select-delete"></td>
                   <td>
                     <div class="detail__product__img"><img src="{{item.image}}" alt="" class="img-fluid"></div>
                   </td>
-                  <td>{{item.name}}</td>
-                  <td>$ {{item.price}}</td>
-                  <td>{{item.quantity}}</td>
-                  <td><button class="btn__remove" (click)="removeToCart(item.id)">Delete</button></td>
+                  <td class="text-center">{{item.name | titlecase}}</td>
+                  <td class="text-center">{{item.price | currency}}</td>
+                  <td class="text-center">{{item.quantity}}</td>
+                  <td class="text-center"><button class="btn btn-sm" (click)="removeToCart(item.id)"><i class="fa fa-trash-alt"></i></button></td>
                 </tr>
               </tbody>
             </table>
