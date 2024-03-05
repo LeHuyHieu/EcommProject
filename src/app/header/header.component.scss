@@ -1,0 +1,49 @@
+$-black: #000;
+$-white: #fff;
+
+.nav {
+  .logo {
+    font-family: "Madimi One", sans-serif;
+  }
+  ul.list__right {
+    li > a {
+      display: inline-block;
+      padding: .1rem .5rem;
+      color: $-black;
+      border-radius: 10px;
+      margin-left: 10px;
+      font-weight: 400;
+      transition: .3s;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 2px;
+        background-color: $-black;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: .2s;
+      }
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .filter-search {
+    .form-control {
+      border-radius: 100rem 0 0 100rem;
+    }
+    .btn-active {
+      border-radius: 0 100rem 100rem 0;
+    }
+    .list__search__products {
+      border-radius: 10px;
+    }
+  }
+}

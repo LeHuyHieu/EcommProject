@@ -12,7 +12,7 @@
 
   .form-group {
     display: inline-flex;
-    width: 50%;
+    width: 40%;
     & input[type="text"] {
       border-color: $--black;
       border-radius: 0.25rem 0 0 0.25rem;
@@ -61,7 +61,7 @@
         }
       }
       & li:last-child {
-        border-bottom: none; 
+        border-bottom: none;
       }
     }
   }

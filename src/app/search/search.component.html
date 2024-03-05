@@ -15,12 +15,12 @@
                             <p class="price w-100 mb-0"><strong>Price :</strong> ${{item.price}}</p>
                             <p class="color w-100 mb-0"><strong>Color :</strong> <span [style.backgroundColor]="item.color"></span></p>
                             <p class="w-100 mb-0"><strong>Category :</strong> {{item.category}}</p>
-                            <p class="w-100 mb-0"><strong>Description :</strong> {{item.description}}</p>
+                            <p class="w-100 mb-0 desc"><strong>Description :</strong> {{item.description}}</p>
                         </div>
                     </div>
                     <div class="product__link">
-                        <a href="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon>View Detail</a>
-                        <a href=""><fa-icon [icon]="iconCart"></fa-icon>Add To Cart</a>
+                        <a href="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon></a>
+                        <a href=""><fa-icon [icon]="iconCart"></fa-icon></a>
                     </div>
                 </div>
             </div>

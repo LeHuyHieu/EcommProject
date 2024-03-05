@@ -1,33 +1,37 @@
-<nav class="nav">
-    <h1><a routerLink="/">E-Comm</a></h1>
-    <div class="form-group position-relative" *ngIf="menuType !== 'seller'">
-        <input type="text" #searchInput (keyup)="searchProduct($event);" (blur)="hideSearch();" class="form-control" placeholder="Tìm kiếm sản phẩm">
-        <button class="btn btn-active" type="submit" (click)="submitSearch(searchInput.value);"><i class="fas fa-search"></i></button>
-        <ul class="list__search__products" *ngIf="searchResult">
-            <!-- <span class="close" (click)="hideSearch();"><fa-icon [icon]="iconClose"></fa-icon></span> -->
-            <li *ngFor="let item of searchResult">
-                <a (mousedown)="redirectToDetail(item.id);" routerLink="/details/{{item.id}}">{{item.name}}</a>
-            </li>
-        </ul>
+<div class="container">
+  <nav class="nav">
+    <h1><a class="logo" routerLink="/">E-Comm</a></h1>
+    <div class="form-group filter-search position-relative" *ngIf="menuType !== 'seller'">
+      <input type="text" #searchInput (keyup)="searchProduct($event);" (blur)="hideSearch();" class="form-control"
+        placeholder="Tìm kiếm sản phẩm">
+      <button class="btn btn-active" type="submit" (click)="submitSearch(searchInput.value);"><i
+          class="fas fa-search"></i></button>
+      <ul class="list__search__products" *ngIf="searchResult">
+        <!-- <span class="close" (click)="hideSearch();"><fa-icon [icon]="iconClose"></fa-icon></span> -->
+        <li *ngFor="let item of searchResult">
+          <a (mousedown)="redirectToDetail(item.id);" routerLink="/details/{{item.id}}">{{item.name}}</a>
+        </li>
+      </ul>
     </div>
     <div [ngSwitch]="menuType">
-        <ul *ngSwitchCase="'default'">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/seller-auth">Seller</a></li>
-            <li><a routerLink="/user-auth">Login / Sing-Up</a></li>
-        </ul>
-        <ul *ngSwitchCase="'user'">
-            <li><a routerLink="/">Home</a></li>
-            <li><a [routerLink]="cartItem>0?'/cart':null">Cart({{cartItem}})</a></li>
-            <li><a routerLink="/my-orders">My Orders</a></li>
-            <li><a routerLink="/user-auth">{{userName | titlecase}}</a></li>
-            <li><a href="javascript:void(0);" (click)="logoutUser()">Logout</a></li>
-        </ul>
-        <ul *ngSwitchCase="'seller'">
-            <li><a routerLink="/seller-home">List</a></li>
-            <li><a routerLink="/seller-add-product">Add Product</a></li>
-            <li><a href="javascript:void(0);">{{ sellerName | titlecase }}</a></li>
-            <li><a href="javascript:void(0);" (click)="logoutSell()">Logout</a></li>
-        </ul>
+      <ul class="list__right" *ngSwitchCase="'default'">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/seller-auth">Seller</a></li>
+        <li><a routerLink="/user-auth">Login</a></li>
+      </ul>
+      <ul class="list__right" *ngSwitchCase="'user'">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/cart">Cart({{cartItem}})</a></li>
+        <li><a routerLink="/my-orders">My Orders</a></li>
+        <li><a routerLink="/user-auth">{{userName | titlecase}}</a></li>
+        <li><a href="javascript:void(0);" (click)="logoutUser()">Logout</a></li>
+      </ul>
+      <ul class="list__right" *ngSwitchCase="'seller'">
+        <li><a routerLink="/seller-home">List</a></li>
+        <li><a routerLink="/seller-add-product">Add Product</a></li>
+        <li><a href="javascript:void(0);">{{ sellerName | titlecase }}</a></li>
+        <li><a href="javascript:void(0);" (click)="logoutSell()">Logout</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
+</div>

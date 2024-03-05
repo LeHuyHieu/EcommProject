@@ -56,10 +56,15 @@ export class CartPageComponent implements OnInit {
   }
 
   removeToCart(cartId: number | undefined) {
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
     cartId &&
       this.curentCartData &&
       this.product.removeToCart(cartId).subscribe((result) => {
-        this.loadDetails();
+        if (result) {
+          this.loadDetails();
+          this.product.getCartList(userId);
+        }
       });
   }
 }

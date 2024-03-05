@@ -1,45 +1,54 @@
-<!-- Banner Carosel -->
-<ngb-carousel class="mb-5" *ngIf="popularProducts">
-	<ng-template *ngFor="let item of popularProducts" ngbSlide>
-		<div class="picsum-img-wrapper">
-			<a routerLink="/details/{{item.id}}">
-                <img class="w-100 image-product-carosel" src="{{item.image}}" alt="Random first slide" />
+<div class="container position-relative">
+  <!-- Banner Carosel -->
+  <ngb-carousel class="mb-5 h-85" *ngIf="popularProducts"  [showNavigationArrows]="showNavigationArrows" [interval]="2000">
+    <ng-template *ngFor="let item of popularProducts" ngbSlide>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+          <div class="carousel-caption">
+            <h2>{{item.name}}</h2>
+            <p>{{item.description}}</p>
+            <a class="btn btn-buy" routerLink="/details/{{item.id}}">Shop now</a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+          <div class="picsum-img-wrapper">
+            <a routerLink="/details/{{item.id}}">
+              <img class="img-fluid image-product-carosel" src="{{item.image}}" alt="Random first slide" />
             </a>
-		</div>
-		<div class="carousel-caption">
-			<h3>{{item.name}}</h3>
-			<p>{{item.description}}</p>
-		</div>
-	</ng-template>
-</ngb-carousel>
-<!-- End Banner Carosel -->
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <!-- End Banner Carosel -->
 
-<!-- List Product -->
-<div class="product__list__wrapper">
+  <!-- List Product -->
+  <div class="product__list__wrapper">
     <h2 class="fw-normal fs-3 mb-4">Trendy Product</h2>
     <div class="row">
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of trendyProducts">
-            <div class="product-content mb-4">
-                <div class="product__item">
-                    <div class="product__image">
-                        <a routerLink="/details/{{item.id}}">
-                            <img class="w-100" src="{{item.image}}" alt="Product">
-                        </a>
-                    </div>
-                    <div class="product__details">
-                        <h3 class="product__head">New Apple Mobile</h3>
-                        <div class="product__price">
-                            <h6 class="price">Price : {{item.price}}</h6>
-                            <h6 class="color">Color : {{item.color}}</h6>
-                        </div>
-                    </div>
-                    <div class="product__link">
-                        <a routerLink="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon>View Detail</a>
-                        <a href=""><fa-icon [icon]="iconCart"></fa-icon>Add To Cart</a>
-                    </div>
-                </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let item of trendyProducts">
+        <div class="product-content mb-4">
+          <div class="product__item">
+            <div class="product__image">
+              <a routerLink="/details/{{item.id}}">
+                <img class="w-100" src="{{item.image}}" alt="Product">
+              </a>
             </div>
+            <div class="product__details mb-4">
+              <h3 class="product__head">New Apple Mobile</h3>
+              <div class="product__price">
+                <h6 class="price">Price : {{item.price | currency}}</h6>
+                <h6 class="color">Color : <span [style.backgroundColor]="item.color"></span></h6>
+              </div>
+            </div>
+            <div class="product__link">
+              <a routerLink="/details/{{item.id}}"><fa-icon [icon]="iconEye"></fa-icon></a>
+              <a (click)="AddToCart(item)" style="cursor: pointer;"><fa-icon [icon]="iconCart"></fa-icon></a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  <!-- End List Product -->
 </div>
-<!-- End List Product -->

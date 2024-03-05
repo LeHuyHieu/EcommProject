@@ -1,15 +1,20 @@
-.image-product-carosel {
-    object-fit: contain;
-    height: 600px;
-    width: 100%;
-    max-height: 600px;
-}
-.carousel-caption {
-    background-color: rgba($color: $--black, $alpha: .3);
-    border: 1px solid $--black;
-    border-radius: 10px;
-}
+// .image-product-carosel {
+//     object-fit: contain;
+//     height: 600px;
+//     width: 100%;
+//     max-height: 600px;
+// }
+// .carousel-caption {
+//     background-color: rgba($color: $--black, $alpha: .3);
+//     border: 1px solid $--black;
+//     border-radius: 10px;
+// }
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba($color: $--black, $alpha: .3);
     border-radius: .25rem;
+}
+.carousel-indicators {
+    background-color: rgba($color: $--black, $alpha: .3);
+    border-radius: .25rem;
+    bottom: -10%;
 }

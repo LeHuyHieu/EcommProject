@@ -1,43 +1,53 @@
-<div class="seller-auth">
+<div class="container">
+  <div class="seller-auth">
     <!-- Sign-in -->
     <div class="signup" *ngIf="!showLogin">
-        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value);" action="" method="post" class="common-form">
-            <h1 class="text-center">Seller Sign-Up</h1>
-            <div class="form-group mb-3">
-                <label for="seller-name">Name</label>
-                <input type="text" name="name" required ngModel class="form-control" placeholder="Enter name" id="seller-name">
-            </div>
-            <div class="form-group mb-3">
-                <label for="seller-password">Password</label>
-                <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password" id="seller-password">
-            </div>
-            <div class="form-group mb-3">
-                <label for="seller-email">Email</label>
-                <input type="email" name="email" required ngModel class="form-control" placeholder="Enter Email" id="seller-email">
-            </div>
-            <button class="btn btn-primary d-block m-auto mb-4">Sign-Up</button>
-            <p>
-                Already Have Account? <a href="javascript:void(0);" (click)="openLogin();">Click to Login</a>
-            </p>
-        </form>
+      <h1 class="text-center">Seller Sign-Up</h1>
+      <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value);" action="" method="post"
+        class="common-form border p-3">
+        <div class="form-group mb-3">
+          <label for="seller-name">Name</label>
+          <input type="text" name="name" required ngModel class="form-control" placeholder="Enter name"
+            id="seller-name">
+        </div>
+        <div class="form-group mb-3">
+          <label for="seller-password">Password</label>
+          <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password"
+            id="seller-password">
+        </div>
+        <div class="form-group mb-3">
+          <label for="seller-email">Email</label>
+          <input type="email" name="email" required ngModel class="form-control" placeholder="Enter Email"
+            id="seller-email">
+        </div>
+        <button class="btn btn-primary d-block m-auto mb-4">Sign-Up</button>
+        <p>
+          Already Have Account? <a href="javascript:void(0);" (click)="openLogin();">Click to Login</a>
+        </p>
+      </form>
     </div>
     <!-- Login -->
     <div class="login" *ngIf="showLogin">
-        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value);" action="" method="post" class="common-form">
-            <h1 class="text-center">Seller Login</h1>
-            <p class="text-center text-danger mb-0">{{authError}}</p>
-            <div class="form-group mb-3">
-                <label for="seller-email">Email</label>
-                <input type="email" name="email" required #email="ngModel" ngModel class="form-control" placeholder="Enter Email" id="seller-email">
-            </div>
-            <div class="form-group mb-3">
-                <label for="seller-password">Password</label>
-                <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password" id="seller-password">
-            </div>
-            <button class="btn btn-primary d-block m-auto mb-4">Login</button>
-            <p>
-                Don't Have Account? <a href="javascript:void(0);" (click)="openSignUp();">Click to Sign - Up</a>
-            </p>
-        </form>
+      <h1 class="text-center">Seller Login</h1>
+      <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value);" action="" method="post"
+        class="common-form p-3 border">
+        <p class="text-center text-danger mb-0">{{authError}}</p>
+        <div class="form-group mb-3">
+          <label for="seller-email">Email</label>
+          <input type="email" name="email" required #email="ngModel" ngModel class="form-control"
+            placeholder="Enter Email" id="seller-email">
+        </div>
+        <div class="form-group mb-3">
+          <label for="seller-password">Password</label>
+          <input type="password" name="password" required ngModel class="form-control" placeholder="Enter Password"
+            id="seller-password">
+        </div>
+        <button class="btn btn-primary d-block m-auto mb-4">Login</button>
+        <p>
+          Don't Have Account? <a href="javascript:void(0);" (click)="openSignUp();">Click to Sign - Up</a>
+        </p>
+      </form>
     </div>
+  </div>
+
 </div>

@@ -1,31 +1,35 @@
-<div class="my-orders">
+<div class="container">
+  <div class="my-orders">
     <h2 class="">My Order</h2>
     <div class="row">
-        <div class="border p-3 rounded">
-            <table class="table table-bordered mb-0">
-                <thead>
-                    <tr>
-                        <th>Order Id</th>
-                        <th>Order</th>
-                        <th>Price</th>
-                        <th>Status</th>
-                        <th class="col-2">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of orderData">
-                        <td> {{item.id}} </td>
-                        <td>
-                            <div class="order__img">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqVKHUvTCwi-MSaYBRR1z47hH4AIbwGUkjg&usqp=CAUYac/93rzSwjVdaoKofkH4zf3nMv1e/iJLATwF557mwmqwxjWCjfnFIiJhTSIiESIiESIiESIiESIiEVCZ5C3nuIRIiIRJ4q0VYWZQesejmnuIRWKODRWLAG9raszWHRmJtw7hK16+XS1zL0xMZQYm6gHnBNu42km0J7S0y6bY/wDjF+7lkruHxAa43EWuOg7iO490vTD2fhmUsz2zNYWGoCrewud5uSb+yZkwaVspx6WiNLPWkREwppERCKhM8hbz3EIkREIkREIkREIkREIkREIkREIkREIkREIkREIkShEAQirERCJERCJERCJERCJERCJERCJF4IlAIRViIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhF//9k=" alt="" class="img-fluid">
-                            </div>
-                        </td>
-                        <td>$ {{item.totalPrice}}</td>
-                        <td>Order Success</td>
-                        <td><button class="btn__remove" (click)="cancelOrder(item.id);">Cancel order</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div class="border p-3 rounded">
+        <table class="table table-bordered mb-0">
+          <thead>
+            <tr>
+              <th>Order Id</th>
+              <th>Order</th>
+              <th>Price</th>
+              <th>Status</th>
+              <th class="col-2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderData">
+              <td> {{item.id}} </td>
+              <td>
+                <div class="order__img">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAqVKHUvTCwi-MSaYBRR1z47hH4AIbwGUkjg&usqp=CAUYac/93rzSwjVdaoKofkH4zf3nMv1e/iJLATwF557mwmqwxjWCjfnFIiJhTSIiESIiESIiESIiESIiEVCZ5C3nuIRIiIRJ4q0VYWZQesejmnuIRWKODRWLAG9raszWHRmJtw7hK16+XS1zL0xMZQYm6gHnBNu42km0J7S0y6bY/wDjF+7lkruHxAa43EWuOg7iO490vTD2fhmUsz2zNYWGoCrewud5uSb+yZkwaVspx6WiNLPWkREwppERCKhM8hbz3EIkREIkREIkREIkREIkREIkREIkREIkREIkREIkShEAQirERCJERCJERCJERCJERCJERCJF4IlAIRViIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhEiIhF//9k="
+                    alt="" class="img-fluid">
+                </div>
+              </td>
+              <td>$ {{item.totalPrice}}</td>
+              <td>Order Success</td>
+              <td><button class="btn__remove" (click)="cancelOrder(item.id);">Cancel order</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>

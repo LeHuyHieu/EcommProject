@@ -1,39 +1,45 @@
-<div class="user__auth">
-   <ng-container *ngIf="showForm">
-    <h1 class="user__auth__heading text-center">User Sing Up</h1>
-    <form #userSignUp="ngForm"(ngSubmit)="signUp(userSignUp.value)" class="common-form p-3 border">
+<div class="container">
+  <div class="user__auth">
+    <ng-container *ngIf="showForm">
+      <h1 class="user__auth__heading text-center">User Sing Up</h1>
+      <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form p-3 border">
         <div class="form-group mb-3">
-            <label for="" class="form-label">User Name</label>
-            <input type="text" class="form-control" required name="name" ngModel placeholder="Enter User Name">
+          <label for="" class="form-label">User Name</label>
+          <input type="text" class="form-control" required name="name" ngModel placeholder="Enter User Name">
         </div>
         <div class="form-group mb-3">
-            <label for="" class="form-label">User Email</label>
-            <input type="email" class="form-control" required name="email" ngModel placeholder="Enter User Email">
+          <label for="" class="form-label">User Email</label>
+          <input type="email" class="form-control" required name="email" ngModel placeholder="Enter User Email">
         </div>
         <div class="form-group mb-3">
-            <label for="" class="form-label">User Password</label>
-            <input type="password" class="form-control" required name="password" ngModel placeholder="Enter User Password">
+          <label for="" class="form-label">User Password</label>
+          <input type="password" class="form-control" required name="password" ngModel
+            placeholder="Enter User Password">
         </div>
         <button class="btn btn-primary d-block w-100 mb-4">Sign Up</button>
         <p>Already Have Account? <a href="javascript:void(0);" (click)="oppenForm()">Click Here</a></p>
-    </form>
-   </ng-container>
-   <ng-container *ngIf="!showForm">
-    <h1 class="user__auth__heading text-center">User Login</h1>
-    <form #userLogIn="ngForm"(ngSubmit)="logIn(userLogIn.value)" class="common-form p-3 border">
+      </form>
+    </ng-container>
+    <ng-container *ngIf="!showForm">
+      <h1 class="user__auth__heading text-center">User Login</h1>
+      <form #userLogIn="ngForm" (ngSubmit)="logIn(userLogIn.value)" class="common-form p-3 border">
         <p class="text-danger text-center">{{authErr}}</p>
         <div class="form-group mb-3">
-            <label for="" class="form-label">User Email</label>
-            <input type="email" class="form-control" name="email" required #email="ngModel" ngModel email placeholder="Enter User Email">
-            <p class="text-danger fs-6"><span *ngIf="email.invalid && email.touched">Please Enter Valid Value</span></p>
+          <label for="" class="form-label">User Email</label>
+          <input type="email" class="form-control" name="email" required #email="ngModel" ngModel email
+            placeholder="Enter User Email">
+          <p class="text-danger fs-6"><span *ngIf="email.invalid && email.touched">Please Enter Valid Value</span></p>
         </div>
         <div class="form-group mb-3">
-            <label for="" class="form-label">User Password</label>
-            <input type="password" class="form-control" name="password" required #password="ngModel" ngModel minlength="3" maxlength="20" placeholder="Enter User Password">
-            <p class="text-danger fs-6"><span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span></p>
+          <label for="" class="form-label">User Password</label>
+          <input type="password" class="form-control" name="password" required #password="ngModel" ngModel minlength="3"
+            maxlength="20" placeholder="Enter User Password">
+          <p class="text-danger fs-6"><span *ngIf="password.invalid && password.touched">Please Enter Valid Value</span>
+          </p>
         </div>
         <button class="btn btn-primary d-block w-100 mb-4" [disabled]="userLogIn.invalid">Login</button>
         <p>Want To Create Account? <a href="javascript:void(0);" (click)="oppenForm()">Click Here</a></p>
-    </form>
-   </ng-container>
+      </form>
+    </ng-container>
+  </div>
 </div>

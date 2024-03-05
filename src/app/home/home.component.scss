@@ -1,0 +1,50 @@
+$--black: #000;
+
+.h-85 {
+  height: 75vh;
+  max-height: 75vh;
+}
+h6.color span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid $--black;
+  margin-left: 1rem;
+}
+.product__link {
+  a {
+    color: rgba($color: $--black, $alpha: 0.6);
+    transition: 0.2s;
+    border: 1px solid rgba($color: $--black, $alpha: 0.3);
+    &:hover {
+      color: $--black;
+      box-shadow: 2px 2px 3px rgba($color: $--black, $alpha: 0.1);
+    }
+  }
+}
+
+.carousel-caption {
+  color: $--black;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 50%;
+  text-align: start;
+  h2 {
+    text-transform: capitalize;
+    font-size: 3rem;
+  }
+  .btn-buy {
+    background-color: rgb(240, 72, 38);
+    color: #fff;
+    border: 1px solid rgb(240, 72, 38);
+  }
+}
+
+.picsum-img-wrapper {
+  .image-product-carosel {
+    min-height: 70vh;
+    max-height: 75vh;
+  }
+}
